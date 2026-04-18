@@ -24,6 +24,7 @@ body {
     box-shadow: 0px 0px 50px rgba(0,0,0,1), 0px 0px 15px rgba(192, 192, 192, 0.2);
     text-align: center;
     position: relative;
+    overflow: hidden; /* Importante para el vinilo */
 }
 
 /* El toque rockero: una estrella plateada */
@@ -37,6 +38,20 @@ body {
     left: 0;
 }
 
+.sticker {
+    position: absolute;
+    top: 15px;
+    left: -15px;
+    background: #e63946; /* Rojo rockero suave */
+    color: #fff;
+    padding: 8px 15px;
+    font-weight: bold;
+    transform: rotate(-10deg);
+    border: 2px solid #fff;
+    font-family: 'Arial Black', sans-serif;
+    text-transform: uppercase;
+}
+
 h1 {
     color: #fff;
     font-size: 2.8rem;
@@ -44,6 +59,7 @@ h1 {
     letter-spacing: -1px;
     margin-bottom: 0;
     text-shadow: 2px 2px 0px #444;
+    margin-top: 40px; /* Espacio para el sticker */
 }
 
 .dedicatoria {
@@ -63,50 +79,59 @@ h1 {
     margin: 35px 0;
     color: #bbb;
     font-style: italic;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-left: 3px solid #e63946;
 }
 
 .resaltado {
     font-family: 'Arial Black', sans-serif;
-    color: #e63946; /* Rojo rockero suave, no chillón */
+    color: #e63946; /* Rojo rockero suave */
     font-weight: bold;
     font-size: 1.3rem;
     text-transform: uppercase;
     margin-top: 20px;
     display: block;
     letter-spacing: 1px;
+    text-align: center;
 }
 
-/* El Vinilo ahora es un disco de platino/plata */
+/* EL VINILO CON LA FOTO CENTRAL GIRATORIA */
 .vinilo-box {
-    margin: 30px 0;
+    margin: 40px 0;
     display: inline-block;
-    animation: girar 8s linear infinite;
+    animation: girar 8s linear infinite; /* ¡El vinilo con la foto girará! */
 }
 
 .vinilo {
-    width: 110px;
-    height: 110px;
+    width: 130px; /* Un poco más grande para que la foto se vea bien */
+    height: 130px;
     background: repeating-radial-gradient(
       circle,
       #333,
       #333 2px,
       #111 4px,
       #111 5px
-    ); /* Efecto de surcos de disco */
+    ); /* Efecto de surcos de disco realistas */
     border-radius: 50%;
     border: 3px solid #888;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 0px 20px rgba(255,255,255,0.1);
+    box-shadow: 0px 0px 20px rgba(255,255,255,0.15);
+    position: relative;
+    overflow: hidden; /* Para que la foto se recorte en círculo */
 }
 
-.etiqueta-vinilo {
-    width: 35px;
-    height: 35px;
-    background: #c0c0c0; /* Etiqueta plata */
+/* LA FOTO DENTRO DEL VINILO, RECORTADA EN CÍRCULO */
+.foto-etiqueta {
+    width: 45px; /* Tamaño de la etiqueta central */
+    height: 45px;
     border-radius: 50%;
-    border: 2px solid #111;
+    object-fit: cover; /* Ajusta la foto sin deformarla */
+    border: 3px solid #111; /* Borde interior de metal negro */
+    display: block;
 }
 
 @keyframes girar {
@@ -134,11 +159,13 @@ h1 {
     font-size: 1rem;
     margin: 8px 0;
     color: #888;
+    font-family: 'Georgia', serif;
 }
 
 .datos-cena span {
     color: #c0c0c0;
     font-weight: bold;
+    font-family: 'Arial Black', sans-serif;
 }
 
 button {
@@ -153,6 +180,7 @@ button {
     cursor: pointer;
     text-transform: uppercase;
     transition: all 0.3s ease;
+    font-family: 'Arial Black', sans-serif;
 }
 
 button:hover {
@@ -171,4 +199,5 @@ footer {
     font-style: italic;
     color: #666;
     font-size: 0.9rem;
+    font-family: 'Georgia', serif;
 }
